@@ -1,0 +1,166 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Light & Dark Mode</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+
+        text-align: center;
+
+        padding: 50px 15px;
+
+        margin: 0;
+
+        min-height: 100vh;
+
+        background-color: #f2f2f2;
+
+        transition: 0.3s;
+
+        display: flex;
+
+        justify-content: center;
+
+        align-items: center;
+      }
+
+    
+
+      .card {
+        width: 350px;
+
+        max-width: 100%;
+
+        margin: auto;
+
+        padding: 30px;
+
+        background-color: white;
+
+        border-radius: 15px;
+
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+      }
+
+    
+
+      .dark {
+        background-color: #222;
+
+        color: rgb(73, 79, 156);
+      }
+
+      .dark .card {
+        background-color: #333;
+
+        color: white;
+      }
+
+      .dark button {
+        background-color: #5b3fb1;
+
+        color: white;
+      }
+
+     
+      button {
+        padding: 12px 25px;
+
+        border: none;
+
+        border-radius: 20px;
+
+        background-color: #08080a;
+
+        color: white;
+
+        cursor: pointer;
+
+        font-size: 15px;
+
+        transition: 0.3s;
+      }
+
+      button:hover {
+        opacity: 0.85;
+
+        transform: translateY(-2px);
+      }
+
+    
+
+      h1 {
+        font-size: 30px;
+
+        margin-bottom: 15px;
+      }
+
+      
+      p {
+        line-height: 1.6;
+
+        margin-bottom: 25px;
+      }
+
+    
+
+      @media (max-width: 768px) {
+        body {
+          padding: 40px 15px;
+        }
+
+        .card {
+          width: 350px;
+
+          padding: 28px;
+        }
+
+        h1 {
+          font-size: 28px;
+        }
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <div class="card">
+      <h1 id="heading">☀️ Light Mode</h1>
+
+      <p id="text">Click the button to change the theme.</p>
+
+      <button id="button" onclick="changeMode()">🌙 Dark Mode</button>
+    </div>
+
+    <script>
+      function changeMode() {
+        document.body.classList.toggle("dark");
+
+        document.getElementById("text").textContent =
+          "Theme changed successfully!";
+
+        let heading = document.getElementById("heading");
+
+        let button = document.getElementById("button");
+
+        if (document.body.classList.contains("dark")) {
+          heading.textContent = "🌙 Dark Mode";
+
+          button.textContent = "☀️ Light Mode";
+        } else {
+          heading.textContent = "☀️ Light Mode";
+
+          button.textContent = "🌙 Dark Mode";
+        }
+      }
+    </script>
+  </body>
+</html>
